@@ -4,6 +4,9 @@
 line 175 is main function.
 You can simply press run button (you must have java extension to run the game)
 
+### Player
+The Player, can be moved up, down, left and right into cardinally adjacent squares, provided another entity doesn't stop them (e.g. a wall). The Player begins the game with a set amount of health and attack damage. The Player spawns at a set 'entry location' at the beginning of a game.
+
 ### static entities
 <table>
     <tr>
@@ -189,3 +192,7 @@ each dungeon also has a goal that defines what must be achieved by the player fo
 
 # Winning & Losing
 The game is won when all the goals are achieved. The game is lost when the player dies and is removed from the map.
+
+### Tick Definition
+A tick is a transition from one state to a new state. A tick always starts with user input (i.e. in one tick, the player always does action first, then enemies/spawners). Then the game world changes in the tick and ends when another user input is needed. So “tick n” is the transition from the n-th state to the (n+1)-th state. There can be multiple developer-defined phases within one tick deciding the order of changes to the game world. Here is one possible example on phases sequence to help you understand.
+<img src = "entitiesImg/Tick.png">
