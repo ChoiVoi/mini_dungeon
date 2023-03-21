@@ -59,9 +59,9 @@ You can simply press run button (you must have java extension to run the game)
         <th>Spider</th>
         <th><img src = "entitiesImg/Spider.png"></th>
         <th>Spiders spawn at random locations in the dungeon from the beginning of the game. When the spider spawns, they immediately move the 1 square upwards (towards the top of the screen) and then begin 'circling' their spawn spot (see a visual example below).<br> 
-        <img src = "entitiesImg/spider_movement1.png"><br>
+        <img src = "entitiesImg/spider_movement1.png" width= "150"  height = "150"><br>
         Spiders are able to traverse through walls, doors, switches, portals, exits (which have no effect), but not boulders, in which case it will reverse direction (see a visual example below). <br>
-        <img src = "entitiesImg/spider_movement2.png"><br>
+        <img src = "entitiesImg/spider_movement2.png" width= "150"  height = "150"><br>
         Spiders spawn in a square that is less than or equal to a radius of 20 (via Manhattan distance) around the player’s current position. If there is no available space, a spider is not spawned. Spiders cannot spawn on boulders, or in the same square as the player/enemies. If a spider is stuck between two boulders in its movement path, it should remain still.
         </th>
     </tr>
