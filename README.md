@@ -59,9 +59,9 @@ You can simply press run button (you must have java extension to run the game)
         <th>Spider</th>
         <th><img src = "entitiesImg/Spider.png"></th>
         <th>Spiders spawn at random locations in the dungeon from the beginning of the game. When the spider spawns, they immediately move the 1 square upwards (towards the top of the screen) and then begin 'circling' their spawn spot (see a visual example below).<br> 
-        <img src = "entitiesImg/spider_movement1.png>"><br>
+        <img src = "entitiesImg/spider_movement1.png"><br>
         Spiders are able to traverse through walls, doors, switches, portals, exits (which have no effect), but not boulders, in which case it will reverse direction (see a visual example below). <br>
-        <img src = "entitiesImg/spider_movement2.png>"><br>
+        <img src = "entitiesImg/spider_movement2.png"><br>
         Spiders spawn in a square that is less than or equal to a radius of 20 (via Manhattan distance) around the player’s current position. If there is no available space, a spider is not spawned. Spiders cannot spawn on boulders, or in the same square as the player/enemies. If a spider is stuck between two boulders in its movement path, it should remain still.
         </th>
     </tr>
@@ -92,8 +92,60 @@ You can simply press run button (you must have java extension to run the game)
     </tr>
 </table>
 
+### Collectable Entities
+<table>
+    <tr>
+        <th>Entitiy</th>
+        <th>Image</th>
+        <th>Descripton</th>
+    </tr>
+    <tr>
+        <th>Treasure</th>
+        <th><img src = "entitiesImg/Treasure.png"></th>
+        <th>Can be picked up by the Player.</th>
+    </tr>
+        <tr>
+        <th>Key</th>
+        <th><img src = "entitiesImg/Key.png"></th>
+        <th>Can be picked up by the player when they move into the square containing it. The Player can carry only one key at a time, and only one door has a lock that fits the key. Keys disappear once used in any context i.e. opening a door, building an item. If a key is used before opening its door, its corresponding door may be locked forever.</th>
+    </tr>
+        <tr>
+        <th>Invincibility Potion</th>
+        <th><img src = "entitiesImg/Invincibility_Potion.png"></th>
+        <th>When a Player picks up an Invincibility potion, they may consume it at any time. Any battles that occur when the Player has the effects of the potion end immediately after the first round, with the Player immediately winning and taking no damage. Movement of spiders and bribed mercenaries remains unaffected. The effects of the potion only last for a limited time.</th>
+    </tr>
+        <tr>
+        <th>Invisibility Potion</th>
+        <th><img src = "entitiesImg/Invisibility_Potion.png"></th>
+        <th>When a player picks up an invisibility potion, they may consume it at any time and they immediately become invisible and can move past all other entities undetected. Battles do not occur when a player is under the influence of an invisibility potion.</th>
+    </tr>
+        <tr>
+        <th>Wood</th>
+        <th><img src = "entitiesImg/Wood.png"></th>
+        <th>Can be picked up by the Player.</th>
+    </tr>
+        <tr>
+        <th>Wood</th>
+        <th><img src = "entitiesImg/Wood.png"></th>
+        <th>Can be picked up by the Player.</th>
+    </tr>
+        <tr>
+        <th>Bomb</th>
+        <th><img src = "entitiesImg/Bomb.png"></th>
+        <th>Can be collected by the player. When used it is removed from the inventory it is placed on the map at the player's location. When a bomb is cardinally adjacent to an active switch, it destroys all entities in diagonally and cardinally adjacent cells, except for the player, forming a "square" blast radius. The bomb should detonate when it is placed next to an already active switch, or placed next to an inactive switch that then becomes active. The bomb explodes on the same tick it becomes cardinally adjacent to an active switch. A bomb cannot be picked up once it has been used.</th>
+    </tr>
+        <tr>
+        <th>Sword</th>
+        <th><img src = "entitiesImg/Sword.png"></th>
+        <th>A standard melee weapon. Swords can be collected by the Player and used in battles, increasing the amount of damage they deal by an additive factor. Each sword has a specific durability that dictates the number of battles it can be used before it deteriorates and is no longer usable.</th>
+    </tr>
+        <tr>
+        <th>Sun Stone</th>
+        <th><img src = "entitiesImg/Sun_Stone.png"></th>
+        <th>A special form of treasure, hard and treasuable. It can be picked up by the player. Can be used to open doors, and can be used interchangeably with treasure or keys when building entities. But it cannot be used to bribe mercenaries or assassins. Since it is classed as treasure it counts towards the treasure goal. When used for opening doors, or when replacing another material such as a key or treasure in building entities, it is retained after use.</th>
+</table>
 
-### goals
+### Goals
 each dungeon also has a goal that defines what must be achieved by the player for the dungeon to be considered complete. 
 
 ### Basic goals are:
