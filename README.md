@@ -13,7 +13,7 @@ You can simply press run button (you must have java extension to run the game)
     </tr>
     <tr>
         <th>Wall</th>
-        <th><img src = "/entitiesimg/Wall.png"></th>
+        <th><img src = "entitiesImg/Wall.png"></th>
         <th>Blocks the movement of the Player, enemies and boulders</th>
 # goals
 each dungeon also has a goal that defines what must be achieved by the player for the dungeon to be considered complete. 
