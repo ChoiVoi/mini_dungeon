@@ -59,9 +59,9 @@ You can simply press run button (you must have java extension to run the game)
         <th>Spider</th>
         <th><img src = "entitiesImg/Spider.png"></th>
         <th>Spiders spawn at random locations in the dungeon from the beginning of the game. When the spider spawns, they immediately move the 1 square upwards (towards the top of the screen) and then begin 'circling' their spawn spot (see a visual example below).<br> 
-        <img src = "entitiesImg/spider_movement1.png" width= "150"  height = "150"><br>
+        <img src = "entitiesImg/spider_movement1.png" width= "200"  height = "200"><br>
         Spiders are able to traverse through walls, doors, switches, portals, exits (which have no effect), but not boulders, in which case it will reverse direction (see a visual example below). <br>
-        <img src = "entitiesImg/spider_movement2.png" width= "150"  height = "150"><br>
+        <img src = "entitiesImg/spider_movement2.png" width= "200"  height = "200"><br>
         Spiders spawn in a square that is less than or equal to a radius of 20 (via Manhattan distance) around the player’s current position. If there is no available space, a spider is not spawned. Spiders cannot spawn on boulders, or in the same square as the player/enemies. If a spider is stuck between two boulders in its movement path, it should remain still.
         </th>
     </tr>
@@ -143,6 +143,35 @@ You can simply press run button (you must have java extension to run the game)
         <th>Sun Stone</th>
         <th><img src = "entitiesImg/Sun_Stone.png"></th>
         <th>A special form of treasure, hard and treasuable. It can be picked up by the player. Can be used to open doors, and can be used interchangeably with treasure or keys when building entities. But it cannot be used to bribe mercenaries or assassins. Since it is classed as treasure it counts towards the treasure goal. When used for opening doors, or when replacing another material such as a key or treasure in building entities, it is retained after use.</th>
+</table>
+
+### Buildable Entities
+<table>
+    <tr>
+        <th>Entitiy</th>
+        <th>Image</th>
+        <th>Descripton</th>
+    </tr>
+    <tr>
+        <th>Bow</th>
+        <th><img src = "entitiesImg/Bow.png"></th>
+        <th>Can be crafted with 1 wood + 3 arrows. The bow has a durability which deteriorates after a certain number of battles. Bows give the Player double damage in each round, to simulate being able to attack an enemy at range (it can't actually attack an enemy at range).</th>
+    </tr>
+        <tr>
+        <th>Shield</th>
+        <th><img src = "entitiesImg/Shield.png"></th>
+        <th>Can be crafted with 2 wood + (1 treasure OR 1 key). Shields decrease the effect of enemy attacks. Each shield has a specific durability that dictates the number of battles it can be used before it deteriorates.</th>
+    </tr>
+        <tr>
+        <th>Sceptre</th>
+        <th><img src = "entitiesImg/Sceptre.png"></th>
+        <th>Can be crafted with (1 wood OR 2 arrows) + (1 key OR 1 treasure) + (1 sun stone). A character with a sceptre does not need to bribe mercenaries or assassins to become allies, as they can use the sceptre to control their minds without any distance constraint. But the effects only last for a certain number of ticks.</th>
+    </tr>
+        <tr>
+        <th>Midnight Armour</th>
+        <th><img src = "entitiesImg/Midnight_Armour.png"></th>
+        <th>Can be crafted with (1 sword + 1 sun stone) if there are no zombies currently in the dungeon. Midnight armour provides extra attack damage as well as protection, and it lasts forever.</th>
+    </tr>
 </table>
 
 ### Goals
