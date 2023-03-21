@@ -46,7 +46,54 @@ You can simply press run button (you must have java extension to run the game)
         <th><img src = "entitiesImg/Zombie_Toast_Spawner.png"></th>
         <th>Spawns zombie toasts in an open square cardinally adjacent to the spawner. The Player can destroy a zombie spawner if they have a weapon and are cardinally adjacent to the spawner. If all the cardinally adjacent cells to the spawner are walls, then the spawner will not spawn any zombies.</th>
     </tr>
-# goals
+</table>
+
+### Moving Entities
+<table>
+    <tr>
+        <th>Entitiy</th>
+        <th>Image</th>
+        <th>Descripton</th>
+    </tr>
+    <tr>
+        <th>Spider</th>
+        <th><img src = "entitiesImg/Spider.png"></th>
+        <th>Spiders spawn at random locations in the dungeon from the beginning of the game. When the spider spawns, they immediately move the 1 square upwards (towards the top of the screen) and then begin 'circling' their spawn spot (see a visual example below).<br> 
+        <img src = "entitiesImg/spider_movement1.png>"><br>
+        Spiders are able to traverse through walls, doors, switches, portals, exits (which have no effect), but not boulders, in which case it will reverse direction (see a visual example below). <br>
+        <img src = "entitiesImg/spider_movement2.png>"><br>
+        Spiders spawn in a square that is less than or equal to a radius of 20 (via Manhattan distance) around the player’s current position. If there is no available space, a spider is not spawned. Spiders cannot spawn on boulders, or in the same square as the player/enemies. If a spider is stuck between two boulders in its movement path, it should remain still.
+        </th>
+    </tr>
+        <tr>
+        <th>Zombie Toast</th>
+        <th><img src = "entitiesImg/Zombie_Toast.png"></th>
+        <th>Zombies spawn at zombie spawners and move in random directions. Zombies are limited by the same movement constraints as the Player, except portals have no effect on them.</th>
+    </tr>
+        <tr>
+        <th>Mercenary</th>
+        <th><img src = "entitiesImg/Mercenary.png"></th>
+        <th>Mercenaries do not spawn; they are only present if created as part of the dungeon. They constantly move towards the Player, stopping only if they cannot move any closer (they are able to move around walls). Mercenaries are limited by the same movement constraints as the Player. All mercenaries are considered hostile, unless the Player can bribe them with a certain amount of gold; in which case they become allies. Mercenaries must be within a certain radius of the player in order to be bribed, which is formed by the diagonally and cardinally adjacent cells in a "square" fashion, akin to the blast radius for bombs. As an ally,  the mercenary moves randomly.</th>
+    </tr>
+        <tr>
+        <th>Assassin</th>
+        <th><img src = "entitiesImg/Assassin.png"></th>
+        <th>Assassins are exceptionally powerful mercenaries which deal significantly more damage. When bribing an Assassin, there is a certain chance that the bribe will fail; the gold will be wasted and the Assassin will remain hostile. Battles still do not occur with an Assassin when the player is invisible.</th>
+    </tr>
+        <tr>
+        <th>Swamp Tile</th>
+        <th><img src = "entitiesImg/Swamp_Tile.png"></th>
+        <th>As part of this, you will need to extend your solution to accommodate the idea of a swamp tile. These are tiles that have an x and y position and remain fixed throughout the entire game. They slow the movement of all entities through them, except for the player and allies adjacent to the player. Each swamp file has a movement factor which is a multiplying factor of the number of ticks it takes to traverse the tile.<br>
+        For example, let us say the movement factor for a swamp tile is 2: <br>
+        1. Tick 1: MOve onto the swamp tile
+        2. Tick 2: Stuck on the swamp tile
+        3. Still stuck on the swamp tile
+        4. Move off the swamp tile</th>
+    </tr>
+</table>
+
+
+### goals
 each dungeon also has a goal that defines what must be achieved by the player for the dungeon to be considered complete. 
 
 ### Basic goals are:
