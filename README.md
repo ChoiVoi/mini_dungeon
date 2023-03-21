@@ -210,6 +210,7 @@ each dungeon also has a goal that defines what must be achieved by the player fo
 1. Collecting a certain number of treasure AND getting to an exit
 2. Collecting a certain number of treasure OR having a boulder on all floor switches
 3. Getting to an exit AND (destroying all enemies OR collecting all treasure)
+4. Destroying a certain number of enemies (or more) AND all spawners
 
 ### Winning & Losing
 The game is won when all the goals are achieved. The game is lost when the player dies and is removed from the map.
