@@ -7,6 +7,7 @@ You can simply press run button (you must have java extension to run the game)
 ### Player
 The Player, can be moved up, down, left and right into cardinally adjacent squares, provided another entity doesn't stop them (e.g. a wall). The Player begins the game with a set amount of health and attack damage. The Player spawns at a set 'entry location' at the beginning of a game.
 
+# Entities
 ### static entities
 <table>
     <tr>
@@ -177,22 +178,37 @@ The Player, can be moved up, down, left and right into cardinally adjacent squar
     </tr>
 </table>
 
-### Goals
-each dungeon also has a goal that defines what must be achieved by the player for the dungeon to be considered complete. 
+# Games
 
-### Basic goals are:
-1. Getting to an exit
-2. having aboulder on all switches
-3. Collecting a certain number of treasure items(or more)
+### Battles
+A battle takes place when the Player and an enemy are in the same cell at any point within a single tick. The conditions for a battle occurring are the same regardless of whether the player moves onto the same tile as the enemy, or vice versa.
 
-### Complex goals are:
-1. Collecting a certain number of treasure AND getting to an exit
-2. Collecting a certain number of treasure OR having a boulder on all floor switches
-3. Getting to an exit AND (destroying all enemies OR collecting all treasure)
+A 'round' of a battle occurs as follows:
+Player Health = Player Health - (Enemy Attack Damage / 10)
+Enemy Health = Enemy Health - (Player Attack Damage / 5)
 
-# Winning & Losing
-The game is won when all the goals are achieved. The game is lost when the player dies and is removed from the map.
+Damage will be applied simultaneously to the player and enemy in each round.
+
+If the Player's health is <= 0, then the Player dies, is removed from the game and the game is over. If the enemy's health is <= 0, then the enemy dies and is removed from the game. If after the above 'round', neither the Player nor the enemy is dead, the round repeats until either the Player or enemy is dead.
+
+In battles, allies provide an attack and defence bonus to the player.
 
 ### Tick Definition
 A tick is a transition from one state to a new state. A tick always starts with user input (i.e. in one tick, the player always does action first, then enemies/spawners). Then the game world changes in the tick and ends when another user input is needed. So “tick n” is the transition from the n-th state to the (n+1)-th state. There can be multiple developer-defined phases within one tick deciding the order of changes to the game world. Here is one possible example on phases sequence to help you understand.
 <img src = "entitiesImg/Tick.png">
+
+### Goals
+each dungeon also has a goal that defines what must be achieved by the player for the dungeon to be considered complete. 
+
+#### Basic goals are:
+1. Getting to an exit
+2. having aboulder on all switches
+3. Collecting a certain number of treasure items(or more)
+
+#### Complex goals are:
+1. Collecting a certain number of treasure AND getting to an exit
+2. Collecting a certain number of treasure OR having a boulder on all floor switches
+3. Getting to an exit AND (destroying all enemies OR collecting all treasure)
+
+### Winning & Losing
+The game is won when all the goals are achieved. The game is lost when the player dies and is removed from the map.
