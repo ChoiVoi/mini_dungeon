@@ -4,10 +4,11 @@
 line 175 is main function.
 You can simply press run button (you must have java extension to run the game)
 
+# Entities
+
 ### Player
 The Player, can be moved up, down, left and right into cardinally adjacent squares, provided another entity doesn't stop them (e.g. a wall). The Player begins the game with a set amount of health and attack damage. The Player spawns at a set 'entry location' at the beginning of a game.
 
-# Entities
 ### static entities
 <table>
     <tr>
